@@ -8,6 +8,8 @@ FROM php:7.1.11-apache
 
 MAINTAINER Dongasai 1514582970@qq.com
 
+RUN apt-get update;
+RUN apt install -y vim wget;
 ENV PHALCON_VERSION=3.1.2
 ENV IM_VERSION=6.9.9-34
 
@@ -17,8 +19,7 @@ RUN curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VE
     && cp ../tests/_ci/phalcon.ini $(php-config --configure-options | grep -o "with-config-file-scan-dir=\([^ ]*\)" | awk -F'=' '{print $2}') \
     && cd ../../ \
     && rm -r cphalcon-${PHALCON_VERSION}
-RUN apt-get update;
-RUN apt install -y vim wget;
+
 RUN docker-php-ext-install pdo pdo_mysql;docker-php-ext-enable pdo pdo_mysql;
 RUN pecl install redis-3.1.6 \
     && pecl install xdebug-2.5.0 \
