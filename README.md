@@ -11,3 +11,7 @@ RUN tar zxvf ImageMagick-${IM_VERSION}.tar.gz \
     && make \
     && make install
 RUN pecl install imagick-3.4.3 --with-imagick=/usr/local/imagemagick;docker-php-ext-enable imagick
+
+
+PUBLIC
+/etc/apache2/apache2.conf

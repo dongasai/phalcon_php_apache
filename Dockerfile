@@ -4,7 +4,7 @@
 # https://github.com/phalcon/dockerfiles
 #
 
-FROM php:7.1-fpm
+FROM php:7.1.11-apache
 
 MAINTAINER Dongasai 1514582970@qq.com
 
@@ -18,6 +18,7 @@ RUN curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VE
     && cd ../../ \
     && rm -r cphalcon-${PHALCON_VERSION}
 RUN apt-get update;
+RUN apt install -y vim wget;
 RUN docker-php-ext-install pdo pdo_mysql;docker-php-ext-enable pdo pdo_mysql;
 RUN pecl install redis-3.1.6 \
     && pecl install xdebug-2.5.0 \
