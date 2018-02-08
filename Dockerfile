@@ -9,7 +9,7 @@ FROM php:7.1.11-apache
 MAINTAINER Dongasai 1514582970@qq.com
 
 RUN apt-get update;
-RUN apt install -y vim wget;
+RUN apt install -y vim wget php-bcmath;
 ENV PHALCON_VERSION=3.1.2
 ENV IM_VERSION=6.9.9-34
 
