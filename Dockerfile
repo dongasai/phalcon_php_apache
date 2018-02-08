@@ -25,12 +25,4 @@ RUN pecl install redis-3.1.6 \
 RUN apt-get install -y libmemcached-dev zlib1g-dev \
     && pecl install memcached-3.0.4\
     && docker-php-ext-enable memcached
-# 安装 ImageMagick
-RUN wget wget ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick-${IM_VERSION}.tar.gz
-RUN tar zxvf ImageMagick-${IM_VERSION}.tar.gz \
-    && rm ImageMagick-${IM_VERSION}.tar.gz \
-    && cd ImageMagick-${IM_VERSION} \
-    && ./configure --prefix=/usr/local/imagemagick \
-    && make \
-    && make install
-RUN pecl install imagick-3.4.3 --with-imagick=/usr/local/imagemagick;docker-php-ext-enable imagick
+
