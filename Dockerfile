@@ -9,7 +9,7 @@ FROM php:7.1.11-apache
 MAINTAINER Dongasai 1514582970@qq.com
 
 RUN apt-get update;
-RUN apt install -y vim wget php-bcmath;
+RUN apt-get install -y vim wget;
 ENV PHALCON_VERSION=3.1.2
 ENV IM_VERSION=6.9.9-34
 
@@ -27,4 +27,5 @@ RUN pecl install redis-3.1.6 \
 RUN apt-get install -y libmemcached-dev zlib1g-dev \
     && pecl install memcached-3.0.4\
     && docker-php-ext-enable memcached
+RUN docker-php-ext-install bcmath;
 
