@@ -11,6 +11,7 @@ MAINTAINER Dongasai 1514582970@qq.com
 RUN a2enmod rewrite
 RUN apt-get update
 RUN apt-get install -y vim wget
+RUN wget http://ftp.cn.debian.org/debian/pool/main/c/curl/libcurl3-gnutls_7.58.0-2_amd64.deb;dpkg -i libcurl3-gnutls_7.58.0-2_amd64.deb;apt-get -f -y install
 RUN apt-get install -y git
 ENV PHALCON_VERSION=3.1.2
 ENV IM_VERSION=6.9.9-34
