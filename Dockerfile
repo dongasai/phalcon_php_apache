@@ -9,8 +9,9 @@ FROM php:7.1.11-apache
 MAINTAINER Dongasai 1514582970@qq.com
 
 RUN a2enmod rewrite
-RUN apt-get update;
-RUN apt-get install -y vim wget git;
+RUN apt-get update
+RUN apt-get install -y vim wget
+RUN apt-get install -y git
 ENV PHALCON_VERSION=3.1.2
 ENV IM_VERSION=6.9.9-34
 
