@@ -4,7 +4,7 @@
 # https://github.com/phalcon/dockerfiles
 #
 
-FROM php:7.1.11-apache
+FROM php:7.1.17-apache
 
 MAINTAINER Dongasai 1514582970@qq.com
 
